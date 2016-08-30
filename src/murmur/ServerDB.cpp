@@ -2020,7 +2020,7 @@ void Server::dblog(const QString &str) const {
 		}
 	}
 
-	SQLPREP("INSERT INTO `%1slog` (`server_id`, `msg`, `msgtime`) VALUES(?,?, now())");
+	SQLPREP("INSERT INTO `%1slog` (`server_id`, `msg`) VALUES(?,?)");
 	query.addBindValue(iServerNum);
 	query.addBindValue(str);
 	SQLEXEC();
